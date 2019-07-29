@@ -1,0 +1,16 @@
+<template bindable="error, title, posts">
+  <require from="./blog-post"></require>
+  
+  <div class="alert alert-danger" if.bind="!posts">
+    ${ error }
+  </div>
+
+  <div class="alert alert-info">
+    <slot></slot>
+  </div>
+
+  <div repeat.for="post of posts">
+    <blog-post post.bind="post" if.bind="!error"></blog-post>
+    <a route-href="route: post-view; params.bind: { slug: post.slug }">View Post &raquo;</a>
+  </div>
+</template>

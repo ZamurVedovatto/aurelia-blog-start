@@ -1,0 +1,11 @@
+<template>
+  <h1>Sign Up</h1>
+  <div class="alert alert-danger" if.bind="error">
+    ${ error } <a route-href="route: login;"><strong>Log In</strong></a>
+  </div>      
+  <form submit.delegate="signup()">
+    <input type="text" placeholder="Name" value.bind="name"> 
+    <button class="btn btn-secondary" type="submit">Sign Up</button>
+  </form>
+</template>
+            
